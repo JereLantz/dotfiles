@@ -23,7 +23,7 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
--- add line without leaving normal mode
+-- add new line without leaving normal mode
 vim.keymap.set("n", "<leader>o", "o<esc>")
 vim.keymap.set("n", "<leader>O", "O<esc>")
 
@@ -47,12 +47,25 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- make current file executable
 --vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- source current file
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+
+-- diagnostic maps
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 -- Diagnostic keymaps. Moves the cursor to next/previous error (?)
 vim.keymap.set("n","<leader><S-j>", vim.diagnostic.goto_next)
 vim.keymap.set("n","<leader><S-k>", vim.diagnostic.goto_prev)
 
---tmux new session (?)
---vim.keymap.set("n", "<C-f>","<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
--- source current file
-vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
+-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+-- is not what someone will guess without a bit more experience.
+--
+-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- or just use <C-\><C-n> to exit terminal mode
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

@@ -37,3 +37,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+-- Case-insensitive search unless \c or one or more capital letters in the seach area
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- highlight the line where the cursor is
+vim.opt.cursorline = true
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
