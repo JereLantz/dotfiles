@@ -1,0 +1,120 @@
+@import "mocha.css";
+
+* {
+    font-size: 12px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: transparent;
+    background-color: @crust;
+    color: @overlay0;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    border-bottom: 1px solid @overlay1;
+}
+
+#window {
+    margin: 8px;
+    padding-left: 8;
+    padding-right: 8;
+    color: @text;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    color: @mauve;
+    border-top: 2px solid @mauve;
+}
+
+#workspaces button {
+    padding: 0 4px;
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @rosewater;
+    border-top: 2px solid @rosewater;
+}
+
+#pulseaudio {
+    color: @blue;
+}
+
+#idle_inhibitor {
+    margin-right: 12px;
+    color: #7cb342;
+}
+
+#idle_inhibitor.activated {
+    color: @red;
+}
+
+#clock {
+    color: @maroon;
+}
+
+#clock.date {
+    color: @mauve;
+}
+
+#battery {
+    color: @green;
+}
+
+#network {
+    color: @blue;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cpu{
+    color: @text;
+}
+
+#temperature{
+    color: @yellow;
+}
+
+#memory{
+    color: @peach;
+}
+
+#language{
+    color: @sapphire;
+}
+
+/* omit margin if the leftmost module */
+.modules-left>widget:first-child#workspaces {
+    margin-left: 0;
+}
+
+.modules-right>widget:last-child#workspaces {
+    margin-right: 0;
+}
