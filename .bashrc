@@ -20,4 +20,3 @@ export CGO_ENABLED=1
 export MANPAGER='nvim +Man!'
 
 export PS1="[\u@\h \w]\n$ "
-. "$HOME/.cargo/env"
