@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("n", "<leader>ef", vim.cmd.Ex)
+--vim.keymap.set("n", "<leader>ef", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ef", "<cmd>Oil<CR>")
+vim.keymap.set("n", "-", "<cmd>Oil<CR>")
 
 -- Allows the moving of highlighted lines. Also auto indents
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
