@@ -1,5 +1,5 @@
 prompt=Search
-insensitice=true
+insensitive=true
 key_up=Ctrl-p
 key_down=Ctrl-n
 location=center
