@@ -30,3 +30,5 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+export PATH="$PATH:$HOME/.cargo/bin/"
