@@ -35,3 +35,6 @@ export PATH="$PATH:$HOME/.cargo/bin/"
 
 # nvm asennus
 source /usr/share/nvm/init-nvm.sh
+
+# nvim default editori
+export EDITOR='nvim'
